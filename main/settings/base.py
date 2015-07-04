@@ -40,7 +40,7 @@ PREREQUISITE_APPS = [
 ]
 
 PROJECT_APPS = [
-
+    'streamer',
 ]
 
 INSTALLED_APPS = PREREQUISITE_APPS + PROJECT_APPS
@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'streamer.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'streamer.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 
 # Database
