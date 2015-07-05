@@ -1,8 +1,12 @@
-from django.http import HttpResponse
+from django.views.static import serve
+from main.settings import base
 
-import json
+import os
+import re
 
 
-def test_handler(req):
-    test_content = json.dumps({'status': 0})
-    return HttpResponse(content=test_content, status=200, content_type='application/json')
+def get_stream(req, stream_name):
+    req.META.pop('HTTP_IF_MODIFIED_SINCE', None)
+    stream_token = re.split(r'[\._]+', stream_name)[0]
+    media_root = os.path.join(base.MEDIA_ROOT, stream_token)
+    return serve(request=req, path=stream_name, document_root=media_root, show_indexes=True)

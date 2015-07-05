@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script src="http://cdn.dashjs.org/latest/dash.all.js"></script>
+  </head>
+  <body onLoad="Dash.createAll()">
+    <div>
+      <video class="dashjs-player" autoplay preload="true" controls="true">
+{#        <source src="http://localhost:8000/static/b520bc595ce04d708123abcca6fdbf5e.mpd" type="application/dash+xml"/>#}
+        <source src="http://localhost:8000/streamer/b520bc595ce04d708123abcca6fdbf5e.mpd/" type="application/dash+xml"/>
+{#        <source src="http://dash.edgesuite.net/dash264/TestCases/1c/qualcomm/2/MultiRate.mpd" type="application/dash+xml"/>#}
+      </video>
+    </div>
+  </body>
+</html>
