@@ -1,10 +1,3 @@
-## Prerequisite
-ffmpeg
-https://www.ffmpeg.org/download.html
-
-MP4Box
-http://gpac.wp.mines-telecom.fr/mp4box/
-
 ## Run server
 ```
 $ pip install -r requirements/dev.txt
