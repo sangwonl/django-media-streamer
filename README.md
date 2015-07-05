@@ -7,5 +7,5 @@ $ python manage.py runserver
 
 ## Play Test on Browser
 ```
-Connect to http://localhost:8000/test_page/
+Connect to http://localhost:8000/manager/test_page/
 ```
