@@ -8,7 +8,6 @@
 
  <Period duration="PT0H1M57.31S">
   <AdaptationSet segmentAlignment="true" maxWidth="1280" maxHeight="720" maxFrameRate="30" par="16:9" lang="und">
-   <ContentComponent id="1" contentType="video" />
    <Representation id="1" mimeType="video/mp4" codecs="avc1.640029,mp4a.40.2" width="1280" height="720" frameRate="30" sar="1:1" audioSamplingRate="48000" startWithSAP="1" bandwidth="863621">
     <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
     <SegmentTemplate timescale="1000" media="b520bc595ce04d708123abcca6fdbf5e_1000k_$Number$.m4s" startNumber="1" duration="1837" initialization="b520bc595ce04d708123abcca6fdbf5e_1000k_init.mp4"/>
