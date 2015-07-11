@@ -38,8 +38,8 @@ function loadAndPlayMedia(mediaURL) {
   var mediaInfo = new chrome.cast.media.MediaInfo(mediaURL);
   mediaInfo.metadata = new chrome.cast.media.GenericMediaMetadata();
   mediaInfo.metadata.metadataType = chrome.cast.media.MetadataType.GENERIC;
-  mediaInfo.contentType = 'video/mp4';
   mediaInfo.metadata.title = 'Test Video';
+  mediaInfo.contentType = 'application/x-mpegURL';
 
   var request = new chrome.cast.media.LoadRequest(mediaInfo);
   request.autoplay = true;

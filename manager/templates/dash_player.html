@@ -1,15 +1,11 @@
 <html>
   <head>
     <script type="text/javascript" src="http://cdn.dashjs.org/latest/dash.all.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-    <script type="text/javascript" src="/static/js/main.js"></script>
   </head>
   <body onLoad="Dash.createAll()">
     <div>
-      <button onclick="launchApp()">Launch App!!</button>
-      <button onclick="doChromecast()">Chromecast!!</button>
-      <video class="dashjs-player" preload="true" controls="true">
-        <source id="sample-video-src" src="http://172.30.1.38:8000/streamer/b520bc595ce04d708123abcca6fdbf5e.mpd/" type="application/dash+xml"/>
+      <video class="dashjs-player" autoplay preload="true" controls="true">
+        <source id="sample-video-src" src="{{ media_url }}" type="application/dash+xml"/>
       </video>
     </div>
   </body>
