@@ -4,7 +4,7 @@
  <ProgramInformation moreInformationURL="http://localhost:8000/streamer/">
   <Title>Sample Video 1280x720</Title>
  </ProgramInformation>
- <BaseURL>http://localhost:8000/streamer/</BaseURL>
+ <BaseURL>http://172.30.1.38:8000/streamer/</BaseURL>
 
  <Period duration="PT0H1M57.31S">
   <AdaptationSet segmentAlignment="true" maxWidth="1280" maxHeight="720" maxFrameRate="30" par="16:9" lang="und">
