@@ -2,14 +2,15 @@ from django.template import loader
 from django.template import RequestContext
 
 from django.http import HttpResponse
+from common.utils import get_ip_addr
 
-import socket
 
-
-def get_ip_addr():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(('8.8.8.8', 80))
-    return s.getsockname()[0]
+def test_simple(req):
+    t = loader.get_template('simple_player.html')
+    c = RequestContext(req, {
+        'media_url': 'http://%s:8000/streamer/53c426c98cdf4ad8ac769177578418ce.mp4/' % get_ip_addr()
+    })
+    return HttpResponse(t.render(c))
 
 
 def test_dash(req):
@@ -26,3 +27,14 @@ def test_hls(req):
         'media_url': 'http://%s:8000/streamer/ab1291c3fd9043dab94a3b9ffdfd5aad.m3u8/' % get_ip_addr()
     })
     return HttpResponse(t.render(c))
+
+
+def cast_receiver(req):
+    t = loader.get_template('cast_receiver.html')
+    c = RequestContext(req, {})
+
+    res = HttpResponse(t.render(c))
+    res['Access-Control-Allow-Origin'] = '*'
+    res['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE'
+    res['Access-Control-Allow-Headers'] = 'Content-Type'
+    return res

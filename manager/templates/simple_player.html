@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+  </head>
+  <body>
+    <div>
+      <button onclick="launchApp()">Launch App!!</button>
+      <button onclick="doChromecast()">Chromecast!!</button>
+        <video width="320" height="240" autoplay>
+            <source id="sample-video-src" src="{{ media_url }}" type="video/mp4">
+        </video>
+    </div>
+  </body>
+</html>
