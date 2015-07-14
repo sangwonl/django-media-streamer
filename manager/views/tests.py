@@ -2,10 +2,10 @@ from django.template import loader
 from django.template import RequestContext
 
 from django.http import HttpResponse
-from common.utils import get_ip_addr
+from utils.networks import get_host_ip
 
 
-HOST_IP = get_ip_addr()
+HOST_IP = get_host_ip()
 
 
 def simple_stream(req):
