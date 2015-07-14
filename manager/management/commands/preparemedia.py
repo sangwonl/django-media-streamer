@@ -35,6 +35,7 @@ class Command(BaseCommand):
         cache_dir = self._create_cache_dir(hash_name)
         stream_type_handlers[self.stream_type](cache_dir, hash_name)
 
+    # Stream handlers
     def handle_simple(self, cache_dir, hash_name):
         output_dir = os.path.join(cache_dir, '%s.mp4' % hash_name)
 
@@ -54,6 +55,7 @@ class Command(BaseCommand):
 
         self._ffmpeg_transcode_and_hls_segmentation(m3u8_path, ts_path)
 
+    # Common methods
     def _parse_params(self, opts):
         params = (opts['stream_type'], opts['input_file'], opts['output_dir'])
         if not all(params):
@@ -62,17 +64,18 @@ class Command(BaseCommand):
         self.stream_type, self.input_file, self.output_dir = params
 
     @staticmethod
-    def _mkdir(path):
-        if not os.path.exists(path): os.makedirs(path)
+    def _create_dir(path):
+        if not os.path.exists(path):
+            os.makedirs(path)
 
     def _create_cache_dir(self, hash_name):
         media_cache_dir = os.path.join(self.output_dir, hash_name)
-        self._mkdir(media_cache_dir)
+        self._create_dir(media_cache_dir)
         return media_cache_dir
 
     def _create_temp_dir(self, hash_name):
         media_temp_dir = os.path.join(self.output_dir, '../temp/%s' % hash_name)
-        self._mkdir(media_temp_dir)
+        self._create_dir(media_temp_dir)
         return media_temp_dir
 
     def _ffmpeg_transcode(self, output_path):

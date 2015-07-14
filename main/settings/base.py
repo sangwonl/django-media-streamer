@@ -42,6 +42,7 @@ PREREQUISITE_APPS = [
 PROJECT_APPS = [
     'streamer',
     'manager',
+    'chromecast',
 ]
 
 INSTALLED_APPS = PREREQUISITE_APPS + PROJECT_APPS
@@ -63,7 +64,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'main', 'templates')
+            os.path.join(BASE_DIR, 'main', 'templates'),
+            os.path.join(BASE_DIR, 'chromecast', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,6 +124,7 @@ APPEND_SLASH = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'manager', 'static'),
+    os.path.join(PROJECT_DIR, 'chromecast', 'static'),
 )
 
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'library/cache/').replace('\\', '/')
