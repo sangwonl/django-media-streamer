@@ -20,7 +20,6 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^chromecast/', include('chromecast.urls')),
     url(r'^streamer/', include('streamer.urls')),
     url(r'^manager/', include('manager.urls')),
 ]
