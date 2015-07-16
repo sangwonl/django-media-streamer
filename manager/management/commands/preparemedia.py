@@ -17,9 +17,9 @@ class Command(BaseCommand):
     output_dir = ''
 
     def add_arguments(self, parser):
-        parser.add_argument('--stream_type', type=str)
-        parser.add_argument('--input_file', type=str)
-        parser.add_argument('--output_dir', type=str)
+        parser.add_argument('--stream-type', type=str)
+        parser.add_argument('--input-file', type=str)
+        parser.add_argument('--output-dir', type=str)
 
     def handle(self, *args, **options):
         self._parse_params(options)
@@ -57,7 +57,7 @@ class Command(BaseCommand):
 
     # Common methods
     def _parse_params(self, opts):
-        params = (opts['stream_type'], opts['input_file'], opts['output_dir'])
+        params = (opts['stream-type'], opts['input-file'], opts['output-dir'])
         if not all(params):
             raise CommandError('Invalid parameters.')
 
