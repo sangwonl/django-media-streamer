@@ -57,7 +57,7 @@ class Command(BaseCommand):
 
     # Common methods
     def _parse_params(self, opts):
-        params = (opts['stream-type'], opts['input-file'], opts['output-dir'])
+        params = (opts['stream_type'], opts['input_file'], opts['output_dir'])
         if not all(params):
             raise CommandError('Invalid parameters.')
 
